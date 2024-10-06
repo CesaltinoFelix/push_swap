@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/06 14:15:45 by cefelix           #+#    #+#             */
+/*   Updated: 2024/10/06 15:09:13 by cefelix          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_free_list(t_node *list)
@@ -40,7 +52,7 @@ void	ft_move_min_to_top(t_node **a)
 	{
 		sentido = 1;
 	}
-	while ((*a)->value != min)  // Altere aqui para usar `value`
+	while ((*a)->value != min)
 	{
 		if (sentido == -1)
 			ft_rotate_a(a, 1);

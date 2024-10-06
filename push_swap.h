@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/06 14:16:00 by cefelix           #+#    #+#             */
+/*   Updated: 2024/10/06 15:13:13 by cefelix          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -35,7 +47,7 @@ typedef struct s_stack_info
 	int				element_value;
 	int				counter;
 	int				arg_value;
-}					t_stack_info;
+}					t_s_info;
 
 void				ft_init_list(t_node **list, int value);
 void				ft_print_list(t_node *list);
@@ -53,7 +65,6 @@ int					ft_stack_get_min(t_node *list);
 int					ft_get_best_option(t_node **a, int b);
 int					ft_get_index(t_node *a, int value);
 int					ft_count_list(t_node *list);
-
 t_node				*ft_stack_get_top(t_node *list);
 t_node				*ft_stack_get_last(t_node *list);
 

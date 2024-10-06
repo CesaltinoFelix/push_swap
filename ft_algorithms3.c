@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_algorithms3.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/06 14:15:10 by cefelix           #+#    #+#             */
+/*   Updated: 2024/10/06 15:13:15 by cefelix          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_rrr_rr(t_node **a, t_node **b, t_target target_data)
@@ -34,7 +46,8 @@ int	ft_case_rrr_or_rr(int value, t_node **a, t_node **b, int direction)
 	return (opt_moves + 1);
 }
 
-void	ft_set_targets(t_stack_info *vars, t_target *target_data, t_node **a, t_node **b)
+void	ft_set_targets(t_s_info *vars, t_target *target_data,
+	t_node **a, t_node **b)
 {
 	if (vars->stack_a_size + vars->stack_b_size < vars->total_moves)
 	{
@@ -62,7 +75,7 @@ void	ft_set_targets(t_stack_info *vars, t_target *target_data, t_node **a, t_nod
 	}
 }
 
-void	ft_set_directions(t_node **a, t_node **b, t_stack_info *vars)
+void	ft_set_directions(t_node **a, t_node **b, t_s_info *vars)
 {
 	if (vars->element_index <= ft_count_list(*a) / 2)
 	{
@@ -88,9 +101,9 @@ void	ft_set_directions(t_node **a, t_node **b, t_stack_info *vars)
 
 t_target	ft_calculate_moves(t_node **a, t_node **b)
 {
-	t_node	*tmp;
+	t_node		*tmp;
+	t_s_info	vars;
 	t_target	target_data;
-	t_stack_info	vars;
 
 	vars.counter = 0;
 	vars.total_moves = INT_MAX;
