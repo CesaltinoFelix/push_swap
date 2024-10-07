@@ -6,18 +6,11 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:15:35 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:09:13 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:30:50 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_isvalid(long n)
-{
-	if (n == INT_MIN)
-		return (0);
-	return (1);
-}
 
 int	ft_stack_get_max(t_node *list)
 {
@@ -53,7 +46,7 @@ int	ft_stack_get_min(t_node *list)
 	return (tmp);
 }
 
-int	ft_count_list(t_node *list)
+int	ft_count_elem(t_node *list)
 {
 	int	i;
 

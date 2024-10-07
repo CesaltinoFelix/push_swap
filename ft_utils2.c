@@ -6,13 +6,13 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:15:45 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:09:13 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:32:55 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_list(t_node *list)
+void	ft_free_stack(t_node *list)
 {
 	t_node	*current;
 	t_node	*next;
@@ -44,7 +44,7 @@ void	ft_move_min_to_top(t_node **a)
 
 	min = ft_stack_get_min(*a);
 	index = ft_get_index(*a, min);
-	if (index <= ft_count_list(*a) / 2)
+	if (index <= ft_count_elem(*a) / 2)
 	{
 		sentido = -1;
 	}
@@ -61,12 +61,12 @@ void	ft_move_min_to_top(t_node **a)
 	}
 }
 
-int	ft_count_array(char **rede)
+int	ft_count_args(char **arguments)
 {
 	int	i;
 
 	i = 0;
-	while (rede[i])
+	while (arguments[i])
 		i++;
 	return (i);
 }

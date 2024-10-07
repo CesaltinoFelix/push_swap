@@ -6,19 +6,19 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:14:56 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:09:13 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:23:19 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_two(t_node **a)
+void	two_args_alg(t_node **a)
 {
 	if (!ft_check_sorted(*a))
 		ft_swap_a(a, 1);
 }
 
-void	ft_sort_three(t_node **a)
+void	three_args_alg(t_node **a)
 {
 	if (ft_stack_get_min(*a) == (*a)->value)
 	{

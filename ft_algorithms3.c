@@ -6,7 +6,7 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:15:10 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:13:15 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:30:50 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	ft_case_rrr_or_rr(int value, t_node **a, t_node **b, int direction)
 	if (direction == 1)
 	{
 		target = ft_get_best_option(a, value);
-		opt_moves = ft_count_list(*b) - ft_get_index(*b, value);
-		if (ft_count_list(*a) - ft_get_index(*a, target) > opt_moves)
-			opt_moves = ft_count_list(*a) - ft_get_index(*a, target);
+		opt_moves = ft_count_elem(*b) - ft_get_index(*b, value);
+		if (ft_count_elem(*a) - ft_get_index(*a, target) > opt_moves)
+			opt_moves = ft_count_elem(*a) - ft_get_index(*a, target);
 	}
 	return (opt_moves + 1);
 }
@@ -77,24 +77,24 @@ void	ft_set_targets(t_s_info *vars, t_target *target_data,
 
 void	ft_set_directions(t_node **a, t_node **b, t_s_info *vars)
 {
-	if (vars->element_index <= ft_count_list(*a) / 2)
+	if (vars->element_index <= ft_count_elem(*a) / 2)
 	{
 		vars->stack_a_size = vars->element_index;
 		vars->dir_a = -1;
 	}
-	else if (vars->element_index > ft_count_list(*a) / 2)
+	else if (vars->element_index > ft_count_elem(*a) / 2)
 	{
-		vars->stack_a_size = ft_count_list(*a) - vars->element_index;
+		vars->stack_a_size = ft_count_elem(*a) - vars->element_index;
 		vars->dir_a = 1;
 	}
-	if (vars->counter <= ft_count_list(*b) / 2)
+	if (vars->counter <= ft_count_elem(*b) / 2)
 	{
 		vars->stack_b_size = vars->counter + 1;
 		vars->dir_b = -1;
 	}
-	else if (vars->counter > ft_count_list(*b) / 2)
+	else if (vars->counter > ft_count_elem(*b) / 2)
 	{
-		vars->stack_b_size = ft_count_list(*b) - vars->counter + 1;
+		vars->stack_b_size = ft_count_elem(*b) - vars->counter + 1;
 		vars->dir_b = 1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:16:00 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:13:13 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 12:55:24 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,26 +49,26 @@ typedef struct s_stack_info
 	int				arg_value;
 }					t_s_info;
 
-void				ft_init_list(t_node **list, int value);
-void				ft_print_list(t_node *list);
+void				ft_init_stack(t_node **list, int value);
 
-int					ft_isvalid(long n);
-int					ft_count_array(char **array);
+int					ft_check_is_num(char *str);
+int					ft_check_max_min(char *str);
+int					ft_count_args(char **array);
 int					ft_check_duplicates(t_node *list, int n);
 int					ft_check_sorted(t_node *list);
-int					ft_validate_input_one(char **av, int i, t_node **list);
-int					ft_validate_input_two(char **av, int i, t_node **list);
+int					ft_validate_input(\
+					char **av, int i, t_node **list, int start_from);
 int					ft_validate_global(int ac, char **av, t_node **stack_a);
 
 int					ft_stack_get_max(t_node *list);
 int					ft_stack_get_min(t_node *list);
 int					ft_get_best_option(t_node **a, int b);
 int					ft_get_index(t_node *a, int value);
-int					ft_count_list(t_node *list);
+int					ft_count_elem(t_node *list);
 t_node				*ft_stack_get_top(t_node *list);
 t_node				*ft_stack_get_last(t_node *list);
 
-void				ft_free_list(t_node *list);
+void				ft_free_stack(t_node *list);
 void				ft_free_matrix(char **matrix);
 
 void				ft_push_b(t_node **a, t_node **b);
@@ -87,9 +87,9 @@ void				ft_reverse_rotate_rotate(t_node **a, t_node **b);
 
 void				ft_rrr_rr(t_node **a, t_node **b, t_target target_data);
 
-void				ft_sort_two(t_node **a);
-void				ft_sort_three(t_node **a);
-void				ft_sort_more(t_node **a, t_node **b);
+void				two_args_alg(t_node **a);
+void				three_args_alg(t_node **a);
+void				big_algorithm(t_node **a, t_node **b);
 
 t_target			ft_calculate_moves(t_node **a, t_node **b);
 void				ft_move_min_to_top(t_node **a);

@@ -19,7 +19,6 @@ ft_strlen.o \
 ft_strtrim.o \
 ft_bzero.o \
 ft_isdigit.o \
-ft_isbigdigit.o\
 ft_memcpy.o \
 ft_putnbr_fd.o \
 ft_striteri.o \

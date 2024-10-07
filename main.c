@@ -6,14 +6,14 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:15:52 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:09:13 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:38:03 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void	ft_init_list(t_node **list, int value)
+void	ft_init_stack(t_node **list, int value)
 {
 	t_node	*new;
 
@@ -25,33 +25,24 @@ void	ft_init_list(t_node **list, int value)
 	*list = new;
 }
 
-void	ft_print_list(t_node *list)
-{
-	while (list)
-	{
-		ft_printf("%d\n", list->value);
-		list = list->next;
-	}
-}
-
 int	main(int ac, char **av)
 {
-	t_node	*pilha1;
-	t_node	*pilha2;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (ac == 1)
 		return (0);
-	pilha1 = NULL;
-	pilha2 = NULL;
-	if (!ft_validate_global(ac, av, &pilha1))
+	stack_a = NULL;
+	stack_b = NULL;
+	if (!ft_validate_global(ac, av, &stack_a))
 		return (0);
-	if (ft_count_list(pilha1) == 2)
-		ft_sort_two(&pilha1);
-	else if (ft_count_list(pilha1) == 3)
-		ft_sort_three(&pilha1);
+	if (ft_count_elem(stack_a) == 2)
+		two_args_alg(&stack_a);
+	else if (ft_count_elem(stack_a) == 3)
+		three_args_alg(&stack_a);
 	else
-		ft_sort_more(&pilha1, &pilha2);
-	ft_free_list(pilha1);
-	ft_free_list(pilha2);
+		big_algorithm(&stack_a, &stack_b);
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
 	return (0);
 }

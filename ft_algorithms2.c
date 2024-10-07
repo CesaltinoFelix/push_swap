@@ -6,7 +6,7 @@
 /*   By: cefelix <cefelix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:15:03 by cefelix           #+#    #+#             */
-/*   Updated: 2024/10/06 15:10:00 by cefelix          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:30:50 by cefelix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,15 @@ void	ft_insert_b_into_a(t_node **a, t_node **b, t_target target_data)
 	ft_push_a(a, b);
 }
 
-void	ft_sort_more(t_node **a, t_node **b)
+void	big_algorithm(t_node **a, t_node **b)
 {
 	t_target	target_data;
 
-	while (ft_count_list(*a) > 3)
+	while (ft_count_elem(*a) > 3)
 		ft_push_b(a, b);
 	if (!ft_check_sorted(*a))
-		ft_sort_three(a);
-	while (ft_count_list(*b) > 0)
+		three_args_alg(a);
+	while (ft_count_elem(*b) > 0)
 	{
 		target_data = ft_calculate_moves(a, b);
 		if ((*b)->value > ft_stack_get_max(*a)
@@ -96,7 +96,7 @@ void	ft_sort_more(t_node **a, t_node **b)
 	}
 	while (!ft_check_sorted(*a))
 	{
-		if (ft_get_index(*a, ft_stack_get_max(*a)) <= ft_count_list(*a) / 2)
+		if (ft_get_index(*a, ft_stack_get_max(*a)) <= ft_count_elem(*a) / 2)
 			ft_rotate_a(a, 1);
 		else
 			ft_reverse_rotate_a(a, 1);
